@@ -1,6 +1,6 @@
 {
   "name": "deterministic-json",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Deterministic JSON parse/stringify that supports Buffers",
   "main": "index.js",
   "scripts": {
