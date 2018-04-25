@@ -1,0 +1,22 @@
+{
+  "name": "deterministic-json",
+  "version": "1.0.0",
+  "description": "Deterministic JSON parse/stringify that supports Buffers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "json",
+    "deterministic",
+    "crypto"
+  ],
+  "author": "Matt Bell <mappum@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "json-stable-stringify": "^1.0.1"
+  },
+  "devDependencies": {
+    "tape": "^4.9.0"
+  }
+}
