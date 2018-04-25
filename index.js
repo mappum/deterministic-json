@@ -24,6 +24,12 @@ function convertBase64ToBuffers (obj) {
   return replace(obj, base64ToBufferReplacer)
 }
 
+// converts buffer to base64 and strips trailing equals chars
+function bufferToBase64 (buffer) {
+  let actualLength = Math.floor(buffer.length / 3) * 4 + 2
+  return buffer.toString('base64').slice(0, actualLength)
+}
+
 function bufferToBase64Replacer (key, value) {
   // convert JSON.stringified Buffer objects to Buffer,
   // so they can get encoded to base64
@@ -36,7 +42,7 @@ function bufferToBase64Replacer (key, value) {
     value = Buffer.from(value)
   }
   if (!Buffer.isBuffer(value)) return value
-  return `${base64Prefix}${value.toString('base64')}`
+  return `${base64Prefix}${bufferToBase64(value)}`
 }
 
 function base64ToBufferReplacer (key, value) {
