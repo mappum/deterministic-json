@@ -24,7 +24,7 @@ test('stringify', (t) => {
 
   t.test('original object not mutated', (t) => {
     let obj = { data: Buffer.from('base64 me plz'), foo: 'bar' }
-    let stringified = json.stringify(obj)
+    json.stringify(obj)
     t.ok(obj.data instanceof Buffer, 'data is still a Buffer')
     t.end()
   })
